@@ -1,38 +1,249 @@
-.App {
-  text-align: center;
+/*------reset styles start-------*/
+* {
+	padding: 0;
+	margin : 0;
+	border : 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	box-sizing        : border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:focus,
+:active {
+	outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:focus,
+a:active {
+	outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+nav,
+footer,
+header,
+aside {
+	display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html,
+body {
+	height                  : 100%;
+	width                   : 100%;
+	font-size               : 100%;
+	line-height             : 1;
+	font-size               : 14px;
+	-ms-text-size-adjust    : 100%;
+	-moz-text-size-adjust   : 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border : 0;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size  : inherit;
+	font-weight: inherit;
+}
+
+/*------reset styles end-------*/
+
+
+
+.app-wrapper{
+	padding: 10px;
+	max-width: 800px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1.5fr 6fr;
+	grid-template-rows: 60px 1fr;
+}
+
+.app-header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: rgb(152, 191, 245);
+	grid-column: 1 / 3;
+	grid-row: 1 / 2;
+	padding: 10px;
+}
+
+.app-header__logo{
+	display: block;
+	margin-left: 20px;
+	max-height: 100%;
+	border-radius: 100%;
+	border: solid white 1px;
+	padding: 5px;
+}
+
+.app-header__title{
+	font-size: 25px;
+	color: white;
+	margin-right: 10px;
+
+}
+
+
+
+/* CONTENT============================= */
+
+.app-content{
+	padding: 4px 4px 20px 4px;
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: rgb(222, 226, 235);
+	
+	
+}
+
+.app-content__background{
+	position: relative;
+	height: 125px;
+	overflow: hidden;
+	margin: -4px;
+
+}
+.app-content__background-img{
+	position: absolute;
+   top:-107%;
+   left:0%;
+   width:100%;
+}
+
+.app-content__user{
+	margin-top: 8px;
+	display: flex;
+}
+
+.app-content__user-photo{
+	padding: 4px;
+	background: #ffffff;
+	height: 170px;
+}
+
+.app-content__user-photo-img{
+	max-height: 100%;
+}
+
+.app-content__user-info{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+.app-content__user-info-item{
+	letter-spacing: 0.8px;
+	margin-top: 5px;
+}
+
+.app-content__user-info-item:first-child{
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+
+.app-content__post{
+}
+
+.app-content__post-new{
+	margin-top: 25px;
+	margin-left: 15px;
+	font-weight: 600;
+}
+
+.app-content__post textarea{
+	display: block;
+	margin: 15px 15px 0 10px;
+	width: 90%;
+	padding: 10px;
+	resize: none;
+}
+
+.app-content__post-flex{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.app-content__post button{
+	margin-top: 10px;
+	margin-right: 50px;
+	padding: 5px 35px;
+	border-radius: 15px;
+	background: rgb(180, 208, 247);
+	transition: all 0.4s;
+}
+
+.app-content__post button:hover{
+	background: rgb(145, 174, 214);
+}
+
+
+/* NAVIGATION=========================== */
+
+.app-nav{
+	margin-top: 10px;
+	padding: 10px;
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+	background-color:rgb(222, 226, 235)
+}
+
+.app-nav__item{
+	margin-left: 10px;
+	margin-top: 13px;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.app-nav__item:first-child{
+	margin-top: 0;
+}
+
+.app-nav__item:last-child{
+	margin-top: 30px;
 }
