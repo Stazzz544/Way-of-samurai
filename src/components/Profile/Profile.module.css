@@ -1,0 +1,59 @@
+/* CONTENT============================= */
+
+.content{
+	padding: 4px 4px 20px 4px;
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: rgb(222, 226, 235);
+	
+	
+}
+
+.userBackground{
+	position: relative;
+	height: 125px;
+	overflow: hidden;
+	margin: -4px;
+
+}
+.userBackgroundImg{
+	position: absolute;
+   top:-107%;
+   left:0%;
+   width:100%;
+}
+
+.userPage{
+	margin-top: 8px;
+	display: flex;
+}
+
+.userAvatarWrapper{
+	padding: 4px;
+	background: #ffffff;
+	height: 170px;
+}
+
+.userAvatar{
+	max-height: 100%;
+}
+
+.userInfo{
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+.userInfoItem{
+	letter-spacing: 0.8px;
+	margin-top: 5px;
+}
+
+.userInfoItem:first-child{
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+
