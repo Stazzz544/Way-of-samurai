@@ -89,7 +89,7 @@ h6 {
 
 /*------reset styles end-------*/
 
-.app-wrapper{
+.appWrapper{
 	padding: 10px;
 	max-width: 800px;
 	margin: 0 auto;
@@ -99,6 +99,12 @@ h6 {
 }
 
 
-
-
+.appContentWrapper{
+	padding: 4px 4px 20px 4px;
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: rgb(222, 226, 235);	
+}
 

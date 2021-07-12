@@ -1,13 +1,13 @@
 import contentBg from './../../img/content/contentBg.jpeg';
 import userPhoto from './../../img/content/userPhoto.jpg';
 import MyPosts from './../MyPosts/MyPosts';
-import Post from './../MyPosts/Post/Post';
+
 import s from './Profile.module.css';
 
 
 const Profile = () => {
 	return (
-		<div className={s.content}>
+		<div>
 			<div className="">
 				<div className={s.userBackground}>
 					<img className={s.userBackgroundImg} src={contentBg} alt='user background'/>
@@ -27,10 +27,7 @@ const Profile = () => {
 			</div>
 			
 			<MyPosts/>
-			<Post/>
-			<Post/>
-			<Post/>
-			<Post/>
+			
 
 		</div>
 	)
