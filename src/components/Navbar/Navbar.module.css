@@ -1,6 +1,7 @@
 
 /* NAVIGATION=========================== */
 
+
 .nav{
 	margin-top: 10px;
 	padding: 10px;
@@ -26,4 +27,9 @@
 
 .link{
 	color: #000000;
+}
+
+.active{
+	color: #64c206;
+	font-weight: 700;
 }
