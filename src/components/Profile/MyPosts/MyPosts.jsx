@@ -6,11 +6,14 @@ import Post from './Post/Post';
 
 const MyPosts = () => {
 
-	let postData = [
+	let posts = [
 		{'id': 0, 'post': 'Hello everybody!', 'likesCount': 33},
 		{'id': 1, 'post': "it's my first post", 'likesCount': 13},
 		{'id': 2, 'post': 'How does it works?!', 'likesCount': 1},
 	];
+
+	let postsElement = posts
+	.map( p => <Post message={p.post} likesCount={p.likesCount}/>)
 
 	return (
 		<div className="">
@@ -21,9 +24,7 @@ const MyPosts = () => {
 					<button className={s.button}>Send</button>
 				</div>
 			</form>
-			<Post message={postData[0].post} likesCount={postData[0].likesCount}/>
-			<Post message={postData[1].post} likesCount={postData[1].likesCount}/>
-			<Post message={postData[2].post} likesCount={postData[2].likesCount}/>
+			{postsElement}
 		</div>
 	)
 }
