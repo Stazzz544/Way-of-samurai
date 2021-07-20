@@ -1,6 +1,6 @@
 import s from './Post.module.css';
-import userPhoto from './../../../img/content/userPhoto.jpg';
-import like from './../../../img/icon/like.png'
+import userPhoto from './../../../../img/content/userPhoto.jpg';
+import like from './../../../../img/icon/like.png';
 
 const Post = (props) => {
 	return (

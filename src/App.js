@@ -27,11 +27,11 @@ const App = () => {
 			<Navbar/>
 				<Switch>
 					<div className={s.appContentWrapper}>
-						<Route path="/dialogs" component={Dialogs}></Route>
-						<Route path="/profile" component={Profile}></Route>
-						<Route path="/news" component={News}></Route>
-						<Route path="/Music" component={Music}></Route>
-						<Route path="/settings" component={Settings}></Route>
+						<Route  path="/dialogs" component={Dialogs}></Route>
+						<Route  path="/profile" component={Profile}></Route>
+						<Route  path="/news" component={News}></Route>
+						<Route  path="/Music" component={Music}></Route>
+						<Route  path="/settings" component={Settings}></Route>
 					</div>
 				</Switch>
 			</Router>

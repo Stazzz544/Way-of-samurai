@@ -1,0 +1,49 @@
+.dialogsWrapper{
+	padding: 10px;
+
+}
+
+.title{
+	font-size: 20px;
+   font-weight: 500;
+}
+
+.dialogs{
+	margin-top: 15px;
+	display: grid;
+	grid-template-columns: 3fr 10fr;
+}
+
+.dialogsItems{
+	border-right: rgba(0, 0, 0, 0.453) solid 1px;
+}
+
+.dialog{
+margin-top: 8px;
+}
+
+.dialog a{
+	color:rgb(0, 0, 0);
+	font-size: 20px;
+}
+
+.dialog:first-child{
+	margin-top: 0px;
+}
+
+.messages{
+	margin-left: 10px;
+}
+
+.message{
+	margin-top: 15px;
+}
+
+.message:first-child{
+	margin-top: 0px;
+}
+
+.dialog a.active{
+	color: #64c206;
+   font-weight: 700;
+}
