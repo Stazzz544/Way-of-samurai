@@ -21,7 +21,7 @@ const App = (props) => {
 	return (
 		<div className={s.appWrapper}>
 			<Header/>
-			<Navbar/>
+			<Navbar state={props.state.dialogsPage.dialogs} />
 				<Switch>
 					<div className={s.appContentWrapper}>
 						<Route  path="/dialogs" 

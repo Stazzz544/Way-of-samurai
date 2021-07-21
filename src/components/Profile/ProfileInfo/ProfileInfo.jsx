@@ -1,16 +1,16 @@
 import s from './ProfileInfo.module.css';
-import contentBg from './../../../img/content/contentBg.jpeg';
-import userPhoto from './../../../img/content/userPhoto.jpg';
+// import contentBg from './../../../img/content/contentBg.jpeg';
+// import userPhoto from './../../../img/content/userPhoto.jpg';
 
 const ProfileInfo = () => {
 	return (
 		<div className="">
 			<div className={s.userBackground}>
-				<img className={s.userBackgroundImg} src={contentBg} alt='user background' />
+				<img className={s.userBackgroundImg} src='/img/content/contentBg.jpeg' alt='user background' />
 			</div>
 			<div className={s.userPage}>
 				<div className={s.userAvatarWrapper}>
-					<img className={s.userAvatar} src={userPhoto} alt='user avatar' />
+					<img className={s.userAvatar} src='/img/content/userPhoto.jpg' alt='user avatar' />
 				</div>
 				<div className={s.userInfo}>
 					<h2 className={s.userInfoItem}>Robin Hood</h2>

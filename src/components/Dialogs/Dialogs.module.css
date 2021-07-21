@@ -11,20 +11,35 @@
 .dialogs{
 	margin-top: 15px;
 	display: grid;
-	grid-template-columns: 3fr 10fr;
+	grid-template-columns: 1fr 208px ;
 }
 
 .dialogsItems{
-	border-right: rgba(0, 0, 0, 0.453) solid 1px;
+	border-left: rgba(0, 0, 0, 0.453) solid 1px;
+	padding-left: 8px;
 }
 
 .dialog{
 margin-top: 8px;
+display: flex;
+}
+
+.dialogsAvatar{
+   height: 60px;
+   width: 60px;
+	overflow: hidden;
+	border-radius: 100%;
+}
+
+.dialogsAvatarImg{
+	width: 60px;
 }
 
 .dialog a{
 	color:rgb(0, 0, 0);
 	font-size: 20px;
+	margin-left: 15px;
+	margin-top: 10px;
 }
 
 .dialog:first-child{
@@ -33,10 +48,15 @@ margin-top: 8px;
 
 .messages{
 	margin-left: 10px;
+	
 }
 
 .message{
 	margin-top: 15px;
+	background-color: rgba(240, 248, 255, 0.714);
+	padding: 10px;
+	border-radius: 15px;
+	margin-right: 20px;
 }
 
 .message:first-child{

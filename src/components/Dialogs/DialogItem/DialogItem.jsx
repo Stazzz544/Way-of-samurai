@@ -6,11 +6,11 @@ import {
 
 const DialogItem = (props) =>{
 	let path = `/dialogs/${props.id}`,
-		 avatarLink = `./../../../img/content/friends/legolas.jpg`;
+		 avatarLink = `/img/content/friends/${props.avatar}`;
 	return(
 		<div className={s.dialog}>
-			<div className="dialogsAvatar">
-				<img src={img} ></img>
+			<div className={s.dialogsAvatar}>
+				<img className={s.dialogsAvatarImg} src={avatarLink} ></img>
 			</div>
 			<NavLink activeClassName={s.active} to={path}>{props.name}</NavLink>
 		</div>

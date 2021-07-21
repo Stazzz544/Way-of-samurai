@@ -15,11 +15,12 @@ const Dialogs = (props) => {
 			<h1 className={s.title}>Dialogs</h1>
 
 			<div className={s.dialogs}>
-				<div className={s.dialogsItems}>
-					{dialogsElements}
-				</div>
+
 				<div className={s.messages}>
 					{messagesElements}
+				</div>
+				<div className={s.dialogsItems}>
+					{dialogsElements}
 				</div>
 			</div>
 		</div>
