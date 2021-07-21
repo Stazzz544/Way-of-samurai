@@ -11,30 +11,30 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
 import {
-	BrowserRouter as Router,
 	Switch,
 	Route,
 	Link
  } from "react-router-dom";
 
-const App = () => {
+const App = (props) => {
+
 	return (
-		
 		<div className={s.appWrapper}>
 			<Header/>
-			
-			<Router>
 			<Navbar/>
 				<Switch>
 					<div className={s.appContentWrapper}>
-						<Route  path="/dialogs" component={Dialogs}></Route>
-						<Route  path="/profile" component={Profile}></Route>
+						<Route  path="/dialogs" 
+								  render={ () => <Dialogs 
+										state={props.state.dialogsPage}/>}></Route>
+						<Route  path="/profile"
+								  render={ () => <Profile 
+								  		state={props.state.profilePage} />}></Route>
 						<Route  path="/news" component={News}></Route>
 						<Route  path="/Music" component={Music}></Route>
 						<Route  path="/settings" component={Settings}></Route>
 					</div>
 				</Switch>
-			</Router>
 		</div>
 	);
 }
