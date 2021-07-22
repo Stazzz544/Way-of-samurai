@@ -13,7 +13,6 @@ import Settings from './components/Settings/Settings';
 import {
 	Switch,
 	Route,
-	Link
  } from "react-router-dom";
 
 const App = (props) => {
@@ -21,7 +20,7 @@ const App = (props) => {
 	return (
 		<div className={s.appWrapper}>
 			<Header/>
-			<Navbar state={props.state.dialogsPage.dialogs} />
+			<Navbar state={props.state.dialogsPage} navItems={props.state.sidebar} />
 				<Switch>
 					<div className={s.appContentWrapper}>
 						<Route  path="/dialogs" 
@@ -29,7 +28,8 @@ const App = (props) => {
 										state={props.state.dialogsPage}/>}></Route>
 						<Route  path="/profile"
 								  render={ () => <Profile 
-								  		state={props.state.profilePage} />}></Route>
+								  		state={props.state.profilePage}
+										addPost={props.addPost} />}></Route>
 						<Route  path="/news" component={News}></Route>
 						<Route  path="/Music" component={Music}></Route>
 						<Route  path="/settings" component={Settings}></Route>

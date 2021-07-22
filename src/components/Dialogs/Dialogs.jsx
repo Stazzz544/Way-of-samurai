@@ -1,14 +1,22 @@
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
+import React from 'react';
 
 const Dialogs = (props) => {
+
+	let textMessage = React.createRef();
 
 	let dialogsElements = props.state.dialogs
 	.map( d => <DialogItem name={d.name} id={d.id} avatar={d.avatar}/> )
 
 	let messagesElements = props.state.messages
 	.map( m => <Message message={m.message}/>)
+
+
+	function newMessage () {
+		alert(textMessage.current.value) 
+	}
 
 	return(
 		<div className={s.dialogsWrapper}>
@@ -22,6 +30,11 @@ const Dialogs = (props) => {
 				<div className={s.dialogsItems}>
 					{dialogsElements}
 				</div>
+				<div className={s.newMessageWrapper}>
+					<textarea placeholder='New message...' className={s.dialogsTextarea} ref={textMessage}></textarea>
+					<button onClick={newMessage} className={s.dialogsButton}>отправить</button>
+				</div>
+				
 			</div>
 		</div>
 	)
