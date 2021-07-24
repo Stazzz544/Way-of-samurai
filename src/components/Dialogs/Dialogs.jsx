@@ -5,7 +5,7 @@ import React from 'react';
 
 const Dialogs = (props) => {
 
-	let textMessage = React.createRef();
+	let newMessageElement = React.createRef();
 
 	let dialogsElements = props.state.dialogs
 	.map( d => <DialogItem name={d.name} id={d.id} avatar={d.avatar}/> )
@@ -13,11 +13,16 @@ const Dialogs = (props) => {
 	let messagesElements = props.state.messages
 	.map( m => <Message message={m.message}/>)
 
+	let addMessage = () => {
+		props.addMessage();
+	};
 
-	function newMessage () {
-		alert(textMessage.current.value) 
+	function onMessageChange () {
+		let text = newMessageElement.current.value;
+		props.updateNewDialogText(text);
 	}
 
+	console.log('newDialogText', props.state.newDialogText)
 	return(
 		<div className={s.dialogsWrapper}>
 			<h1 className={s.title}>Dialogs</h1>
@@ -31,8 +36,12 @@ const Dialogs = (props) => {
 					{dialogsElements}
 				</div>
 				<div className={s.newMessageWrapper}>
-					<textarea placeholder='New message...' className={s.dialogsTextarea} ref={textMessage}></textarea>
-					<button onClick={newMessage} className={s.dialogsButton}>отправить</button>
+					<textarea placeholder='New message...' 
+								 className={s.dialogsTextarea}
+								 onChange={onMessageChange}
+								 value={props.state.newDialogText} 
+								 ref={newMessageElement}></textarea>
+					<button onClick={addMessage} className={s.dialogsButton}>отправить</button>
 				</div>
 				
 			</div>
