@@ -22,7 +22,6 @@ const Dialogs = (props) => {
 		props.updateNewDialogText(text);
 	}
 
-	console.log('newDialogText', props.state.newDialogText)
 	return(
 		<div className={s.dialogsWrapper}>
 			<h1 className={s.title}>Dialogs</h1>
