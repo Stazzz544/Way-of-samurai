@@ -23,19 +23,17 @@ const App = (props) => {
 			<Navbar state={props.state.dialogsPage} navItems={props.state.sidebar} />
 				<Switch>
 					<div className={s.appContentWrapper}>
-						<Route  path="/dialogs" 
-								  render={ () => <Dialogs 
-								  updateNewDialogText={props.updateNewDialogText}
-								  addMessage={props.addMessage}
-								  state={props.state.dialogsPage}/>}></Route>
-						<Route   path="/profile"
-								   render={ () => <Profile 
+						<Route	path="/dialogs" render={ () => <Dialogs 
+									dispatch={props.dispatch}
+									state={props.state.dialogsPage}/>}>
+						</Route>
+						<Route	path="/profile" render={ () => <Profile 
 									profilePage={props.state.profilePage}
-									updateNewPostText={props.updateNewPostText}
-									addPost={props.addPost}/>}></Route>
-						<Route  path="/news" component={News}></Route>
-						<Route  path="/Music" component={Music}></Route>
-						<Route  path="/settings" component={Settings}></Route>
+									dispatch={props.dispatch}/>}>
+						</Route>
+						<Route	path="/news" component={News}></Route>
+						<Route	path="/Music" component={Music}></Route>
+						<Route	path="/settings" component={Settings}></Route>
 					</div>
 				</Switch>
 		</div>
