@@ -11,7 +11,7 @@ let store = {
 				{'id': 1, 'post': "it's my first post", 'likesCount': 13},
 				{'id': 2, 'post': 'How does it works?!', 'likesCount': 1},
 			],
-			newMessageBody: ''
+			newPostText: ''
 		},	
 		dialogsPage: {
 			messages: [
@@ -27,7 +27,7 @@ let store = {
 				{'id': 4, 'name': 'Mark', 'avatar': 'mark.jpg'},
 				{'id': 5, 'name': 'Darth-Vader',  'avatar': 'vaider.jpg'},
 			],
-			newDialogText: ''
+			newMessageBody: ''
 		},
 		sidebar: [
 			{'link': '/profile', 'category': 'Profile'},
@@ -62,14 +62,16 @@ let store = {
 			this._state.profilePage.newPostText = action.newText;
 			this._callSubscriber(this._state);
 		
+
+
 		} else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-			this._state.dialogsPage.newDialogText = action.body;
+			this._state.dialogsPage.newMessageBody = action.body;
 			this._callSubscriber(this._state);
 
 		} else if (action.type === SEND_MESSAGE) {
 			let body = this._state.dialogsPage.newMessageBody;
 			this._state.dialogsPage.newMessageBody='';
-			this._state.dialogsPage.messages.push({id: 6, body});
+			this._state.dialogsPage.messages.push({id: 6, message: body});
 			this._callSubscriber(this._state);
 		}
 	}
@@ -79,12 +81,12 @@ let store = {
 export const addPostActionCreator = () => ({type: ADD_POST})
 
 export const updateNewPostTextActionCreator = (text) => 
-	({type: UPDATE_NEW_POST_TEXT, newText: text})
+	({type: UPDATE_NEW_POST_TEXT, newText: text});
 
 export const addMessageActionCreator = () => ({type: SEND_MESSAGE})
 
 export const updateNewMessageBodyCreator = (body) => 
-		({type: UPDATE_NEW_MESSAGE_BODY, body: body})
+		({type: UPDATE_NEW_MESSAGE_BODY, body: body});
 
 
 export default store;
