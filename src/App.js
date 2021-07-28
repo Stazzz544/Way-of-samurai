@@ -1,11 +1,9 @@
 
 import s from './App.module.css';
-
-
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -16,7 +14,6 @@ import {
  } from "react-router-dom";
 
 const App = (props) => {
-	debugger
 	return (
 		<div className={s.appWrapper}>
 			<Header/>
@@ -24,11 +21,11 @@ const App = (props) => {
 				<Switch>
 					<div className={s.appContentWrapper}>
 						<Route	path="/dialogs" render={ () => 
-							<Dialogs 
-									state={props.state.dialogsPage}/>}>
+							<DialogsContainer 
+								store={props.store}/>}>
 						</Route>
 						<Route	path="/profile" render={ () => 
-							<Profile store = {props.state}/>}>
+							<Profile store = {props.store}/>}>
 						</Route>
 						<Route	path="/news" component={News}></Route>
 						<Route	path="/Music" component={Music}></Route>

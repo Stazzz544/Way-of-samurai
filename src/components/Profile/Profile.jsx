@@ -1,8 +1,7 @@
-import MyPostsContainer from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
-	debugger
 	return (
 		<div>
 			<ProfileInfo/>
