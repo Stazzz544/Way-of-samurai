@@ -2,22 +2,22 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
 import {addPostActionCreator, 
-		  updateNewPostTextActionCreator} from '../../../redux/state'
+		  updateNewPostTextActionCreator} from '../../../redux/profileReducer'
 
 const MyPosts = (props) => {
+	debugger
 	let postsElement = props.profilePage.posts
 	.map( p => <Post message={p.post} likesCount={p.likesCount}/>)
 
 	let newPostElement = React.createRef();
 
-	let addPost = () => {
-		props.dispatch(addPostActionCreator());
+	let onAddPost = () => {
+		props.addPost();
 	}
 
 	let onPostChange = () => {
 		let text = newPostElement.current.value;
-		let action = updateNewPostTextActionCreator(text);
-		props.dispatch(action);
+		props.updateNewPostTextActionCreator(text);
 	}
 
 	return (
@@ -29,7 +29,7 @@ const MyPosts = (props) => {
 							 placeholder="New message..."
 							 ref={newPostElement}/>
 				<div className={s.buttonWrapper}>
-					<button onClick={addPost} className={s.button}>Send</button>
+					<button onClick={onAddPost} className={s.button}>Send</button>
 				</div>
 			{postsElement}
 		</div>

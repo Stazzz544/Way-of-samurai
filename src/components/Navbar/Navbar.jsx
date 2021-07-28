@@ -13,9 +13,9 @@ const Navbar = (props) => {
 
 	let NavFriendsElements = props.state.dialogs
 	.map( d => <NavFriends name={d.name} avatar={d.avatar}/>)
-
-	let newNavigationElement = props.navItems
+	let newNavigationElement = props.navItems.sidebar
 	.map( n =>  <Navigation link={n.link} category={n.category}/>)
+	
 
 	return (
 

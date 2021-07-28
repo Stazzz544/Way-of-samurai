@@ -16,20 +16,19 @@ import {
  } from "react-router-dom";
 
 const App = (props) => {
-
+	debugger
 	return (
 		<div className={s.appWrapper}>
 			<Header/>
 			<Navbar state={props.state.dialogsPage} navItems={props.state.sidebar} />
 				<Switch>
 					<div className={s.appContentWrapper}>
-						<Route	path="/dialogs" render={ () => <Dialogs 
-									dispatch={props.dispatch}
+						<Route	path="/dialogs" render={ () => 
+							<Dialogs 
 									state={props.state.dialogsPage}/>}>
 						</Route>
-						<Route	path="/profile" render={ () => <Profile 
-									profilePage={props.state.profilePage}
-									dispatch={props.dispatch}/>}>
+						<Route	path="/profile" render={ () => 
+							<Profile store = {props.state}/>}>
 						</Route>
 						<Route	path="/news" component={News}></Route>
 						<Route	path="/Music" component={Music}></Route>
