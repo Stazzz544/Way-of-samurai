@@ -4,6 +4,7 @@ import DialogItem from './DialogItem/DialogItem';
 import React from 'react';
 
 const Dialogs = (props) => {
+	debugger
 	let state = props.dialogsPage;
 
 	let dialogsElements = state.dialogs
