@@ -8,14 +8,16 @@ import App from './App';
 import {
 	BrowserRouter as Router,
  } from "react-router-dom";
+import StoreContext from './StoreContext';
 
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
 	ReactDOM.render(
 		<React.StrictMode>
-			<Router> <App	state={state}
-								store={store}
-								dispatch={store.dispatch.bind(store)}/>
+			<Router> 
+				<StoreContext.Provider value={store}>
+					<App/>
+				</StoreContext.Provider>
 			</Router>
 		</React.StrictMode>,
 		document.getElementById('root')

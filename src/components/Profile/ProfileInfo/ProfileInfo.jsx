@@ -1,6 +1,5 @@
 import s from './ProfileInfo.module.css';
 // import contentBg from './../../../img/content/contentBg.jpeg';
-// import userPhoto from './../../../img/content/userPhoto.jpg';
 
 const ProfileInfo = () => {
 	return (

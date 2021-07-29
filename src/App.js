@@ -1,7 +1,7 @@
 
 import s from './App.module.css';
 import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
+import NavbarContainer from './components/Navbar/NavbarContainer';
 import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
@@ -13,19 +13,18 @@ import {
 	Route,
  } from "react-router-dom";
 
-const App = (props) => {
+const App = () => {
 	return (
 		<div className={s.appWrapper}>
 			<Header/>
-			<Navbar state={props.state.dialogsPage} navItems={props.state.sidebar} />
+			<NavbarContainer/>
 				<Switch>
 					<div className={s.appContentWrapper}>
 						<Route	path="/dialogs" render={ () => 
-							<DialogsContainer 
-								store={props.store}/>}>
+							<DialogsContainer/>}>
 						</Route>
 						<Route	path="/profile" render={ () => 
-							<Profile store = {props.store}/>}>
+							<Profile/>}>
 						</Route>
 						<Route	path="/news" component={News}></Route>
 						<Route	path="/Music" component={Music}></Route>

@@ -1,4 +1,3 @@
-// import mainLogo from './../../img/logo/mainLogo.png';
 import s from'./Header.module.css';
 
 const Header = () => {
