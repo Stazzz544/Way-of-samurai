@@ -20,7 +20,7 @@ let rerenderEntireTree = () => {
 			</Router>
 		</React.StrictMode>,
 		document.getElementById('root')
-	 );
+	);
 }
 
 
