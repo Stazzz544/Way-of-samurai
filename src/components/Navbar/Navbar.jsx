@@ -4,9 +4,9 @@ import Navigation from './Navigation/Navigation';
 
 const Navbar = (props) => {
 	let NavFriendsElements = props.dialogs
-	.map( d => <NavFriends name={d.name} avatar={d.avatar}/>)
+	.map( d => <NavFriends name={d.name} key={d.id} avatar={d.avatar}/>)
 	let newNavigationElement = props.sidebar
-	.map( n =>  <Navigation link={n.link} category={n.category}/>)
+	.map( n =>  <Navigation link={n.link} key={n.id} category={n.category}/>)
 	
 
 	return (

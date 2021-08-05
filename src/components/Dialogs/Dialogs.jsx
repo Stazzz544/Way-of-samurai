@@ -4,14 +4,13 @@ import DialogItem from './DialogItem/DialogItem';
 import React from 'react';
 
 const Dialogs = (props) => {
-	debugger
 	let state = props.dialogsPage;
 
 	let dialogsElements = state.dialogs
-	.map( d => <DialogItem name={d.name} id={d.id} avatar={d.avatar}/> )
+	.map( d => <DialogItem name={d.name} key={d.id} id={d.id} avatar={d.avatar}/> )
 
 	let messagesElements = state.messages
-	.map( m => <Message message={m.message}/>)
+	.map( m => <Message message={m.message} key={m.id}/>)
 
 	let onSendMessageClick = () => {
 		props.sendMessage();

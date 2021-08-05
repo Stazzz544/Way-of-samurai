@@ -7,12 +7,11 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-
-
 import {
 	Switch,
 	Route,
  } from "react-router-dom";
+import Users from './components/users/Users';
 
 const App = () => {
 	return (
@@ -30,6 +29,10 @@ const App = () => {
 						<Route	path="/news" component={News}></Route>
 						<Route	path="/Music" component={Music}></Route>
 						<Route	path="/settings" component={Settings}></Route>
+						<Route	path="/users"
+									render={ () => 
+									<UsersContainer/> }>
+						</Route>
 					</div>
 				</Switch>
 		</div>
