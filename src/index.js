@@ -10,19 +10,7 @@ import {
  } from "react-router-dom";
 import { Provider } from 'react-redux';
 
-<<<<<<< HEAD
-ReactDOM.render(
-	<React.StrictMode>
-		<Router> 
-			<Provider store={store}>
-				<App/>
-			</Provider>
-		</Router>
-	</React.StrictMode>, document.getElementById('root')
-);
 
-=======
-let rerenderEntireTree = () => {
 	ReactDOM.render(
 		<React.StrictMode>
 			<Router> 
@@ -33,8 +21,7 @@ let rerenderEntireTree = () => {
 		</React.StrictMode>,
 		document.getElementById('root')
 	);
-}
->>>>>>> main
+
 
 
 

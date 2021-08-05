@@ -4,9 +4,9 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
 	users: [
-		// {id: 1, followed: true, fullname: 'Nika', status: 'i am a lady', location: {city: 'SPb', country: 'Russia'}},
-		// {id: 2, followed: false, fullname: 'Gena', status: 'OLOLO', location: {city: 'Moscow', country: 'Russia'}},
-		// {id: 3, followed: true, fullname: 'Negr', status: 'MATUMBA!', location: {city: 'Gana', country: 'Nigeria'}},
+		{id: 1, followed: true, fullname: 'Nika', status: 'i am a lady', location: {city: 'SPb', country: 'Russia'}},
+		{id: 2, followed: false, fullname: 'Gena', status: 'OLOLO', location: {city: 'Moscow', country: 'Russia'}},
+		{id: 3, followed: true, fullname: 'Negr', status: 'MATUMBA!', location: {city: 'Gana', country: 'Nigeria'}},
 	]
 }
 
@@ -43,8 +43,8 @@ const userReducer = (state = initialState, action) => {
 	}
 };
 
-export const folowAC = (userId) => ({type: FOLLOW, userId})
+export const followAC = (userId) => ({type: FOLLOW, userId})
 export const unfollowAC = (userId) => ({type: UNFOLLOW, userId})
-export const setUserAC = (users) => ({type: SET_USERS, users})
+export const setUsersAC = (users) => ({type: SET_USERS, users})
 
 export default userReducer;

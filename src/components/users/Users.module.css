@@ -1,0 +1,73 @@
+.usersWrapper{
+	padding: 10px;
+}
+.usersTitle{
+	font-size: 20px;
+   font-weight: 500;
+}
+.userWrapper{
+	margin-top: 15px;
+	display: flex;
+}
+.userAvatarAndButton{
+	width: 60px;
+	display: flex;
+	flex-direction: column;
+}
+.userAvatar{
+	overflow: hidden;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+}
+.userAvatarImg{
+	width: 60px;
+}
+.userFollowBtn{
+	padding: 2px 0px;
+	margin-top: 10px;
+	border-radius: 15px;
+	background: rgb(180, 208, 247);
+	transition: all 0.4s;
+}
+.userFollowBtn:hover{
+	background: rgb(145, 174, 214);
+}
+.userInfo{
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 20px;
+	background: rgba(152, 191, 245, 0.163);
+	width: 100%;
+	/* border: rgb(152, 191, 245) solid 1px; */
+	border-radius: 10px
+}
+.userFullnameAndStatus{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+}
+.userFullName{
+	font-size: 20px;
+}
+.userStatus{
+font-style: italic;
+color: rgb(52, 52, 52);
+}
+.userCountryAndCity{
+	padding: 7px 0 18px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
+}
+.userCountry{
+	text-align: right;
+	font-weight: 500;
+}
+.userCity{
+	text-align: right;
+	font-weight: 500;
+}

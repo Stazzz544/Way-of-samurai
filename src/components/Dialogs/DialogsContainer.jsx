@@ -19,9 +19,6 @@ let mapDispathToProps = (dispatch) => {
 			dispatch(addMessageActionCreator());
 			
 		},
-		sendMessage: () => {
-			dispatch(addMessageActionCreator());
-		},
 	};
 };
 
