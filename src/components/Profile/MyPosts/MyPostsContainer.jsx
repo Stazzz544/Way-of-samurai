@@ -12,7 +12,6 @@ const mapStateToProps = (state) => {
 		newPostText: state.profilePage.newPostText,
 	}
 }
-
 const mapDispatchToProps = (dispatch) => {
 	return {
 		updateNewPostTextActionCreator: (text) => {

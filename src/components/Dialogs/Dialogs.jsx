@@ -4,6 +4,10 @@ import DialogItem from './DialogItem/DialogItem';
 import React from 'react';
 
 const Dialogs = (props) => {
+<<<<<<< HEAD
+=======
+	
+>>>>>>> main
 	let state = props.dialogsPage;
 
 	let dialogsElements = state.dialogs
@@ -19,6 +23,7 @@ const Dialogs = (props) => {
 	function onNewMessageChange (e) {
 		let body = e.target.value;
 		props.updateNewMessageBodyCreator(body);
+		
 	}
 
 	return(
