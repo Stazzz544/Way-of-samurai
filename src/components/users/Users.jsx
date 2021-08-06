@@ -3,37 +3,76 @@ import s from './Users.module.css';
 
 
 
-let Users = (props) => {
-	debugger
 
-	let avatarLink = `/img/content/friends/${props.avatar}`;
-	let testAv = 'https://sun9-39.userapi.com/impf/c850336/v850336438/325e3/Uo_qNoQBUeM.jpg?size=1932x1932&quality=96&sign=7f5bf51a17fc3401df4dad2245c7eca1&type=album';
+
+let Users = (props) => {
+
+	if (props.users.length === 0) {
+		props.setUsers ( 
+			[{
+			id: 1,
+			followed: true,
+			avatar: 'legolas.jpg',
+			fullname: 'Legolas',
+			status: 'I am the best archer!',
+			location: {
+				city: 'forest',
+				country: 'Ferelden'
+			}
+			},
+			{
+			id: 2,
+			followed: false,
+			avatar: 'vaider.jpg',
+			fullname: 'Darth-Vader',
+			status: `I'm your father...`,
+			location: {
+				city: 'Big desert',
+				country: 'Tatuin'
+			}
+			},
+			{
+			id: 3,
+			followed: true,
+			avatar: 'nikola.jpg',
+			fullname: 'Nikola',
+			status: 'Elictricity!!',
+			location: {
+				city: 'Smiljan',
+				country: 'Austrian Empire'
+			}
+			},]
+		)}
+
+	let avatarLink = `/img/content/friends/`;
 
 	return (
 		<div className={s.usersWrapper}>
 			<h1 className={s.usersTitle}>Users</h1>
-			
-			<div className={s.userWrapper}>
+			{
+			props.users.map( u => 
+			<div key={u.id} className={s.userWrapper}>
 				<div className={s.userAvatarAndButton}>
 					<div className={s.userAvatar}>
-						<img className={s.userAvatarImg} src={testAv} />
+						<img className={s.userAvatarImg} src={avatarLink+u.avatar} />
 					</div>
-					<button className={s.userFollowBtn}>Follow</button>
+					{ u.followed 
+						? <button onClick={ () => { props.unfollow(u.id) } } className={s.userFollowBtn}>Follow</button>
+						: <button onClick={ () => { props.follow(u.id) } } className={s.userFollowBtn}>Unfollow</button> }
 				</div>
 				<div className={s.userInfo}>
 					<div className={s.userFullnameAndStatus}>
-						<div className={s.userFullName}>Stas Djeckson</div>
-						<div className={s.userStatus}>lifestile ok, and fuck off</div>
+						<div className={s.userFullName}>{u.fullname}</div>
+						<div className={s.userStatus}>{u.status}</div>
 					</div>
 					<div className={s.userCountryAndCity}>
-						<div className={s.userCountry}>Russia</div>
-						<div className={s.userCity}>Saint-Petersburg</div>
+						<div className={s.userCountry}><span>Country:</span> {u.location.country}</div>
+						<div className={s.userCity}><span>City:</span> {u.location.city}</div>
 					</div>
 				</div>
 			</div>
-
+)}
 		</div>
-		
 	)
 }
 

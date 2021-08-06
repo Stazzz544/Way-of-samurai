@@ -67,7 +67,14 @@ color: rgb(52, 52, 52);
 	text-align: right;
 	font-weight: 500;
 }
+.userCountry span{
+	font-weight: 400;
+}
+
 .userCity{
 	text-align: right;
 	font-weight: 500;
+}
+.userCity span{
+	font-weight: 400;
 }
