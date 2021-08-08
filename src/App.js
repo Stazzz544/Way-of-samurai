@@ -11,7 +11,7 @@ import {
 	Switch,
 	Route,
  } from "react-router-dom";
-import UsersContainer from './components/users/UsersContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = () => {
 	return (
@@ -29,7 +29,7 @@ const App = () => {
 						<Route	path="/news" component={News}></Route>
 						<Route	path="/Music" component={Music}></Route>
 						<Route	path="/settings" component={Settings}></Route>
-						<Route	path="/users"
+						<Route	path="/Users"
 									render={ () => 
 									<UsersContainer/> }>
 						</Route>
