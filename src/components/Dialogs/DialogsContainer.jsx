@@ -4,16 +4,17 @@ import { connect } from 'react-redux';
 
 
 let mapStateToProps = (state) => {
+	
 	return {
 		dialogsPage: state.dialogsPage
 	};
 };
 
+
 let mapDispathToProps = (dispatch) => {
 	return {
 		updateNewMessageBodyCreator: (body) => {
 			dispatch(updateNewMessageBodyCreator(body));
-			debugger
 		},
 		sendMessage: () => {
 			dispatch(addMessageActionCreator());
