@@ -4,7 +4,7 @@ import dialogsReducer from './dialogsReducer';
 import profileReducer from './profileReducer';
 import sidebarReducer from './sidebarReducer';
 import usersReducer from './usersReduser';
-
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 
 let reducers = combineReducers({
@@ -15,6 +15,6 @@ let reducers = combineReducers({
 })
 
 
-let store = createStore(reducers);
+let store = createStore(reducers, composeWithDevTools());
 
 export default store;

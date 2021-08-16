@@ -1,7 +1,15 @@
 import s from './ProfileInfo.module.css';
 // import contentBg from './../../../img/content/contentBg.jpeg';
+//API: https://social-network.samuraijs.com/
 
-const ProfileInfo = () => {
+import Preloader from '../../common/Preloader/Preloader';
+
+const ProfileInfo = (props) => {
+
+	if (!props.profile) {
+		return <Preloader/>
+	}
+
 	return (
 		<div className="">
 			<div className={s.userBackground}>
@@ -9,7 +17,7 @@ const ProfileInfo = () => {
 			</div>
 			<div className={s.userPage}>
 				<div className={s.userAvatarWrapper}>
-					<img className={s.userAvatar} src='/img/content/userPhoto.jpg' alt='user avatar' />
+					<img className={s.userAvatar} src={props.profile.photos.large} alt='user avatar' />
 				</div>
 				<div className={s.userInfo}>
 					<h2 className={s.userInfoItem}>Robin Hood</h2>

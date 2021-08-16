@@ -1,9 +1,11 @@
 import React from "react";
 import userPhoto from '../../accets/images/user.png';
 import s from './Users.module.css';
+import {
+	NavLink 
+} from "react-router-dom"; 
 
 let Users = (props) => {
-	
 	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 	if (pagesCount > 5) pagesCount = 5; //УМЕНЬШИЛ СТРАНИЧКИ ДО 5!! УДАЛИТЬ!!
 
@@ -29,8 +31,10 @@ let Users = (props) => {
 				<div key={u.id} className={s.userWrapper}>
 					<div className={s.userAvatarAndButton}>
 						<div className={s.userAvatar}>
+							<NavLink to={'/profile/' + u.id}>
 							<img className={s.userAvatarImg}
 								src={u.photos.small != null ? u.photos.small : userPhoto} alt = 'avatar'/>
+							</NavLink>
 						</div>
 						{u.followed
 							? <button onClick={() => { props.unfollow(u.id) }} className={s.userFollowBtn}>Follow</button>
