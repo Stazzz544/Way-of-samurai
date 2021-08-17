@@ -11,7 +11,7 @@ import {
 	Switch,
 	Route,
  } from "react-router-dom";
-import UsersContainer from './components/Users/UsersContainer';
+import UsersContainer from './components/users/UsersContainer';
 
 const App = () => {
 	return (
@@ -20,18 +20,17 @@ const App = () => {
 			<NavbarContainer/>
 				<Switch>
 					<div className={s.appContentWrapper}>
-						<Route	path="/dialogs" render={ () => 
-							<DialogsContainer/>}>
+						<Route	path="/dialogs" 
+									render={ () => <DialogsContainer/>}>
 						</Route>
-						<Route	path="/profile" render={ () => 
-							<ProfileContainer/>}>
+						<Route	path="/profile/:userId?" 
+									render={ () => <ProfileContainer/>}>
 						</Route>
 						<Route	path="/news" component={News}></Route>
 						<Route	path="/Music" component={Music}></Route>
 						<Route	path="/settings" component={Settings}></Route>
 						<Route	path="/Users"
-									render={ () => 
-									<UsersContainer/> }>
+									render={ () => <UsersContainer/> }>
 						</Route>
 					</div>
 				</Switch>
