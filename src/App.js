@@ -2,7 +2,7 @@
 import s from './App.module.css';
 import Header from './components/Header/Header';
 import NavbarContainer from './components/Navbar/NavbarContainer';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -11,7 +11,7 @@ import {
 	Switch,
 	Route,
  } from "react-router-dom";
-import UsersContainer from './components/users/UsersContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = () => {
 	return (
@@ -24,12 +24,12 @@ const App = () => {
 							<DialogsContainer/>}>
 						</Route>
 						<Route	path="/profile" render={ () => 
-							<Profile/>}>
+							<ProfileContainer/>}>
 						</Route>
 						<Route	path="/news" component={News}></Route>
 						<Route	path="/Music" component={Music}></Route>
 						<Route	path="/settings" component={Settings}></Route>
-						<Route	path="/users"
+						<Route	path="/Users"
 									render={ () => 
 									<UsersContainer/> }>
 						</Route>
