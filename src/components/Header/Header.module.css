@@ -27,6 +27,15 @@
 	margin-right: 10px;
 }
 
+.loginBlock{
+	font-size: 25px;
+	color: white;
+	margin-right: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
 @keyframes loader {
 	0% {transform:rotate(0deg)}
 	25%{transform:rotate(135deg)}

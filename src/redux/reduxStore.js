@@ -4,6 +4,7 @@ import dialogsReducer from './dialogsReducer';
 import profileReducer from './profileReducer';
 import sidebarReducer from './sidebarReducer';
 import usersReducer from './usersReduser';
+import authReducer from './auth-reducer';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 
@@ -11,7 +12,8 @@ let reducers = combineReducers({
 	profilePage: profileReducer,
 	dialogsPage: dialogsReducer,
 	sidebar: sidebarReducer,
-	usersPage: usersReducer
+	usersPage: usersReducer,
+	auth: authReducer,
 })
 
 //для работы redux dev tools использовать код ниже:

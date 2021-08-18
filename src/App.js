@@ -1,6 +1,6 @@
 
 import s from './App.module.css';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
@@ -16,7 +16,7 @@ import UsersContainer from './components/users/UsersContainer';
 const App = () => {
 	return (
 		<div className={s.appWrapper}>
-			<Header/>
+			<HeaderContainer/>
 			<NavbarContainer/>
 				<Switch>
 					<div className={s.appContentWrapper}>
