@@ -5,7 +5,7 @@ import * as axios from 'axios';
 import {
 	NavLink 
 } from "react-router-dom"; 
-import { followUnfollow } from "../api/api";
+import { followUser, unfollowUser } from "../api/api";
 
 let Users = (props) => {
 	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -40,30 +40,25 @@ let Users = (props) => {
 						</div>
 						{u.followed
 							? <button onClick={() => { 
-								axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-									withCredentials: true,
-									headers: {'API-KEY': 'a226a8a4-a574-455d-9792-fc8d5f462604'}
-								})
-									.then(response => {
-										if (response.data.resultCode ===  0) {
-											props.unfollow(u.id);
-										}
+
+								//Старый код для сравнения
+								// axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+								// 	withCredentials: true,
+								// 	headers: {'API-KEY': 'a226a8a4-a574-455d-9792-fc8d5f462604'}
+								// })
+								// 	.then(response => {
+									
+									unfollowUser(u.id).then(response=>{
+										if (response ===  0) props.unfollow(u.id);
 									});
 								}} className={s.userFollowBtn}>Follow</button>
 
 							: <button onClick={() => {
-
-								axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-									withCredentials: true,
-									headers: {'API-KEY': 'a226a8a4-a574-455d-9792-fc8d5f462604'}
-								})
-									.then(response => {
-										if (response.data.resultCode ===  0) {
-											props.follow(u.id);
-										}
+									followUser(u.id).then(response=>{
+										if (response ===  0) props.follow(u.id);
 									});
 									
-								  }} className={s.userFollowBtn}>Unfollow</button>
+								}} className={s.userFollowBtn}>Unfollow</button>
 							}
 					</div>
 					<div className={s.userInfo}>

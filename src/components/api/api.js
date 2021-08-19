@@ -14,16 +14,16 @@ export const getUsers = (currentPage, pageSize) => {
 }
 
 export const followUser = (userID) => {
-	return axios.post(`${baseUrl}/follow/${userID}`, {
+	return axios.post(`${baseUrl}/follow/${userID}`,{}, {
 		withCredentials: true,
-		headers: {'API-KEY': 'a226a8a4-a574-455d-9792-fc8d5f462604'}
+		headers: {'API-KEY': '4b6af4cf-7cba-4221-ab58-606f68f1b7a3'}
 	}).then(resoponse => resoponse.data.resultCode)
 }
 
 export const unfollowUser = (userID) => {
-	return axios.delete(`${baseUrl}/follow/${userID}`,{}, {
+	return axios.delete(`${baseUrl}/follow/${userID}`, {
 		withCredentials: true,
-		headers: {'API-KEY': 'a226a8a4-a574-455d-9792-fc8d5f462604'}
+		headers: {'API-KEY': '4b6af4cf-7cba-4221-ab58-606f68f1b7a3'}
 	}).then(resoponse => resoponse.data.resultCode)
 }
 
