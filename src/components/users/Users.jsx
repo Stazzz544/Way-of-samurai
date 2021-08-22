@@ -1,11 +1,10 @@
 import React from "react";
 import userPhoto from '../../accets/images/user.png';
 import s from './Users.module.css';
-import * as axios from 'axios';
 import {
 	NavLink 
 } from "react-router-dom"; 
-import { followUser, unfollowUser } from "../api/api";
+import { usersAPI } from "../api/api";
 
 let Users = (props) => {
 	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -39,23 +38,23 @@ let Users = (props) => {
 							</NavLink>
 						</div>
 						{u.followed
-							? <button onClick={() => { 
-
-								//Старый код для сравнения
-								// axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-								// 	withCredentials: true,
-								// 	headers: {'API-KEY': 'a226a8a4-a574-455d-9792-fc8d5f462604'}
-								// })
-								// 	.then(response => {
-									
-									unfollowUser(u.id).then(response=>{
-										if (response ===  0) props.unfollow(u.id);
+							? <button disabled={props.followingInProgress.some(id=>id===u.id)} onClick={() => { 
+									props.toggleFollowingProgress(true, u.id)
+									usersAPI.unfollowUser(u.id).then(response=>{
+										if (response ===  0) {
+											props.unfollow(u.id)
+										};
+										props.toggleFollowingProgress(false, u.id)
 									});
+									
 								}} className={s.userFollowBtn}>Follow</button>
-
-							: <button onClick={() => {
-									followUser(u.id).then(response=>{
-										if (response ===  0) props.follow(u.id);
+							: <button disabled={props.followingInProgress.some(id=>id===u.id)} onClick={() => {
+									props.toggleFollowingProgress(true, u.id)
+									usersAPI.followUser(u.id).then(response=>{
+										if (response ===  0) {
+											props.follow(u.id)
+										};
+										props.toggleFollowingProgress(false, u.id)
 									});
 									
 								}} className={s.userFollowBtn}>Unfollow</button>
@@ -78,3 +77,11 @@ let Users = (props) => {
 }
 
 export default Users;
+
+//Старый код для сравнения
+//? <button onClick={() => { 
+// axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+// 	withCredentials: true,
+// 	headers: {'API-KEY': 'a226a8a4-a574-455d-9792-fc8d5f462604'}
+// })
+// 	.then(response => {
