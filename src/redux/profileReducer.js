@@ -51,10 +51,10 @@ export const updateNewPostTextActionCreator = (text) =>
 	({type: UPDATE_NEW_POST_TEXT, newText: text});
 
 
-export const getInfoAboutMe = (userId) => {
-	return (dispatch) => {
+export const getInfoAboutMe = (userId, setUserProfile) => {
+
 		usersAPI.infoAboutMe(userId, setUserProfile )
-	}
+	
 }
 
 export default profileReducer;

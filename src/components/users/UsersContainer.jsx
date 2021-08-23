@@ -10,7 +10,6 @@ import Users from './Users';
 import Preloader from '../common/Preloader/Preloader'
 
 
-
 class UsersContainer extends React.Component {
 
 	componentDidMount() {
@@ -18,7 +17,6 @@ class UsersContainer extends React.Component {
 	}
 
 	onPageChanged = (pageNumber) => {
-
 		this.props.getUsers(pageNumber, this.props.pageSize);
 	};
 	render() { //метод render вернет jsx, пропс сюда не приходит

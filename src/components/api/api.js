@@ -24,6 +24,7 @@ export const usersAPI = {
 	},
 
 	infoAboutMe (userId, setUserProfile) {
+		debugger
 		instance.get(`/profile/${userId}`)
 			.then(response => {setUserProfile(response.data);
 			});
