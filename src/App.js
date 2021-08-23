@@ -11,7 +11,7 @@ import {
 	Switch,
 	Route,
  } from "react-router-dom";
-import UsersContainer from './components/Users/UsersContainer';
+import UsersContainer from './components/users/UsersContainer';
 
 const App = () => {
 	return (

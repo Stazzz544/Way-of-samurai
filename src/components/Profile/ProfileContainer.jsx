@@ -1,10 +1,10 @@
+
 import React from 'react'
 import Profile from "./Profile";
 import { connect } from 'react-redux';
-import {setUserProfile} from '../../redux/profileReducer'
+import {setUserProfile, getInfoAboutMe} from '../../redux/profileReducer'
 import { withRouter } from 'react-router-dom';
 import {usersAPI} from '../api/api'
- 
 
 class ProfileContainer extends React.Component{
 
@@ -13,8 +13,8 @@ class ProfileContainer extends React.Component{
 		if (!userId) {
 			userId = 2
 		}
+		//getInfoAboutMe(userId, this.props.setUserProfile)
 		usersAPI.infoAboutMe(userId, this.props.setUserProfile )
-		
 	}
 
 
